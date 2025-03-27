@@ -1,0 +1,26 @@
+body{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+h1{
+  margin:20px 0;
+  color: purple;
+}
+table{
+  width: 80%;
+  margin:20px auto;
+  background-color: brown;
+}
+th{
+  background-color: grey;
+  color: white;
+  padding: 10px;
+}
+td{
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+}
