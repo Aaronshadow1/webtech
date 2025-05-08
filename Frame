@@ -1,0 +1,55 @@
+<html >
+<head>
+‹title>Webpage with Frames</title>
+</head>
+cframeset rows="15%,*, 10응" border="1">
+<! - Header Frame ->
+<frame src="header.html" name="header" >
+<!- Main Content Area: Left and Right Frames - < Erameset cols="20%, *" border="1"›
+<I- Left Frame -›
+‹frame Bro-"left.html" name-"left"›
+<|- Right Frame ->
+< frame are="right.html" name="right"›
+</ frameset>
+<I- Status Bar Frame ->
+< frame Bro-"status.html" name-"status">
+</frameset>
+</html>
+Header.html
+< I DOCTYPE html> chtml >
+chead>
+‹title›Header‹/title›
+</head›
+<body>
+<h1>Welcome to ABC College</h1>
+</body> </html>
+Right.html
+< DOCTYPE html>
+<html >
+‹head>
+‹title>Left Frame</title>
+</head> <body>
+<h3>Navigation</h3>
+<ul>
+‹li><a href=" courses.html"
+target="right" ›Courses</a></1i>
+</ul>
+</body> </html >
+Left.html
+< DOCTYPE html>
+<html >
+‹head>
+‹title>Right Frame</title>
+</head> <body>
+<h2 >Welcome</h2>
+<p>Click on the links in the left frame to
+view more information here. </p>
+</body> </html>
+Status.html
+<! DOCTYPE html >
+<html >
+<head>
+<title>Status Bar</title>
+</ head> <body>
+<p>Status: Ready</p>
+</body> </html >
