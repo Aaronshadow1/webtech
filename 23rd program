@@ -1,0 +1,42 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+def main():
+           # 1. Load the data
+# Adjust path to where your iris.csv is
+df = pd.read_csv('iris.csv')
+# If there is a non‑numeric column like 'species', drop it (or separate it)
+# assuming 'species' is the name of the target column
+features = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+X = df[features]
+y = df['species'] # optional: for labeling/coloring etc
+# 2. Standardize the features (mean=0, variance=1)
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+ print(pd.DataFrame(data=X,columns=features).head())
+ # 3. Create PCA object, choose # of components
+ pca = PCA(n_components=2) # for example, 2 principal components
+ principal_components = pca.fit_transform(X_scaled)
+ # 4. Put results into a DataFrame if you want
+ pc_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
+ print(pc_df.head(5))
+  df[['species']].head(5)
+# Reset indices just in case
+ pc_df = pc_df.reset_index(drop=True)
+  species_df = df[['species']].reset_index(drop=True)
+finalDf = pd.concat([pc_df, species_df], axis=1) print(finalDf.head(5))
+ # you can also include y
+ pc_df['species'] = y.values
+ # 5. (Optional) See how much variance is explained by each PC
+ print("Explained variance ratio:", pca.explained_variance_ratio_)
+ print("Singular values:", pca.singular_values_)
+   # 6. (Optional) Plot the PCs
+import matplotlib.pyplot as plt
+import seaborn as sns
+ sns.scatterplot(data=pc_df, x='PC1', y='PC2', hue='species')
+ plt.title('PCA of Iris Dataset')
+ plt.xlabel('Principal Component 1')
+ plt.ylabel('Principal Component 2')
+ plt.show()
+if __name__ == '__main__':
+ main()
